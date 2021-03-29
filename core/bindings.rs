@@ -406,7 +406,7 @@ fn send<'s>(
   };
 
   let op = OpTable::route_op(op_id, state.op_state.clone(), bufs);
-  assert_eq!(state.shared.size(), 0);
+  // assert_eq!(state.shared.size(), 0);
   match op {
     Op::Sync(buf) if !buf.is_empty() => {
       rv.set(boxed_slice_to_uint8array(scope, buf).into());
